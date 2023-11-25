@@ -1,6 +1,8 @@
 .page {
   width: 650px;
-  height: 100vh;
+  height: 650px;
   margin: auto;
+  background-color: white;
   border: black solid 1px;
 }
+
