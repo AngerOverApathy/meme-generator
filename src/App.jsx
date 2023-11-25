@@ -15,14 +15,14 @@ export default function App() {
 
       <div className="content">
         <div className="inputs">
-            <input type="text" className="text-box"/>
-            <input type="text" className="text-box"/>
+            <input type="text" className="text-box" placeholder='Upper Text'/>
+            <input type="text" className="text-box" placeholder='Lower Text'/>
         </div>
-        <button>Get a new meme image</button>
+        <button className="btn">Get a new meme image  🖼</button>
       </div>
 
       <div className="meme"> 
-
+        <p>image placeholder</p>
       </div>
 
     </div>
