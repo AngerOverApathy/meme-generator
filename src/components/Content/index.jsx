@@ -4,10 +4,10 @@ export default function Content() {
     return (
         <>
             <div className="content">
-                <div className="inputs">
+                <form className="inputs">
                     <input type="text" className="text-box" placeholder='Upper Text'/>
                     <input type="text" className="text-box" placeholder='Lower Text'/>
-                </div>
+                </form>
                 <button className="btn">Get a new meme image  🖼</button>
             </div>
 
@@ -17,3 +17,4 @@ export default function Content() {
         </>
   )
 }
+
