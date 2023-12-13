@@ -38,11 +38,17 @@ export default function Meme() {
                         type="text" 
                         className="text-box" 
                         placeholder='Upper Text'
+                        name="topText"
+                        value={meme.topText}
+                        onChange={handleChange}
                     />
                     <input 
                         type="text" 
                         className="text-box" 
                         placeholder='Lower Text'
+                        name="bottomText"
+                        value={meme.bottomText}
+                        onChange={handleChange}
                     />
                 </div>
                 <button 
@@ -55,6 +61,8 @@ export default function Meme() {
 
             <div className="meme"> 
                 <img src={meme.randomImage} className="meme-image" />
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
             </>
     )
