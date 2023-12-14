@@ -8,11 +8,22 @@ export default function Meme() {
         bottomText: "",
         randomImage: "http://i.imgflip.com/1bij.jpg" 
     })
-
-    const [allMemeImages, setAllMemeImages] = React.useState(memesData)
-        
+    const [allMemes, setAllMemes] = React.useState(memesData)
+    
+    React.useEffect(()=> {
+        fetch('https://api.imgflip.com/get_memes')
+            .then(response => response.json())
+            .then(response => {
+                setAllMemes(prevAllMemes =>
+                    prevAllMemes = response.data.memes
+                )
+            console.log(allMemes)
+            })
+    }, [])
+    
+    
     function getMemeImage() {
-        const memesArray = allMemeImages.data.memes
+        const memesArray = allMemes.data.memes
         const randomNumber = Math.floor(Math.random() * memesArray.length)
         const url = memesArray[randomNumber].url
         setMeme(prevMeme => ({
@@ -21,7 +32,7 @@ export default function Meme() {
         }))
         
     }
-
+    
     function handleChange(event) {
         const {name, value} = event.target
         setMeme(prevMeme => ({
@@ -67,3 +78,5 @@ export default function Meme() {
             </>
     )
 }
+
+
