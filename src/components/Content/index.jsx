@@ -1,5 +1,5 @@
 import React from 'react'
-import memesData from '../../memesData.jsx'
+
 
 export default function Meme() {
 
@@ -18,9 +18,9 @@ export default function Meme() {
     
     
     function getMemeImage() {
-        const memesArray = allMemes.data.memes
-        const randomNumber = Math.floor(Math.random() * memesArray.length)
-        const url = memesArray[randomNumber].url
+
+        const randomNumber = Math.floor(Math.random() * allMemes.length)
+        const url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
             randomImage: url
